@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import './App.css'
 import * as Helper from './helper';
 
@@ -91,7 +91,7 @@ export const App = () => {
 
     // alternate player turns by flipping the xIsNext boolean state variable
     setXIsNext(!xIsNext);
-    
+
     // update the game board
     setBoard(updatedBoard);
   }
