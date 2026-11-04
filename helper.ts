@@ -1,5 +1,7 @@
 export const myFunction = () => {
-  console.log("hello!")
+  let a = 5;
+  let b = 7;
+  return a + b;
 }
 
 //comment for change
