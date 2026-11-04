@@ -8,10 +8,6 @@ const calculateWinner = (squares: string[]): string|null => {
   const lines = [
     [0, 1, 2],
     [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6]
   ];
@@ -54,16 +50,6 @@ export const App = () => {
   const [xScore, setXScore] = useState(0);
   const [oScore, setOScore] = useState(0);
 
-  // show a message
-  let message: string;
-  if(full && winner == null) {
-    message = "Draw!";
-  } else if(winner == null) {
-    message = `Player ${xIsNext ? "X" : "O"} Turn`;
-  } else {
-    message = `The winner is Player ${winner}`;
-  }
-
   // IMMUTABLE UPDATE
   const handleClick = (idx: number) => {
     // ignore clicks on squares that already have a value
@@ -94,17 +80,24 @@ export const App = () => {
 
     // update the game board
     setBoard(updatedBoard);
+
+
+
+  // show a message
+  let message: string;
+  if(full && winner == null) {
+    message = "Draw!";
+  } else if(winner == null) {
+    message = `Player ${xIsNext ? "X" : "O"} Turn`;
+  } else {
+    message = `The winner is Player ${winner}`;
+  }
   }
 
   const handleReset = () => {
     const emptyBoard = Array(9).fill("");
     setBoard(emptyBoard);
     setXIsNext(true);
-  }
-
-  const handleScoreReset = () => {
-    setXScore(0);
-    setOScore(0);
   }
 
   return <div>
@@ -135,3 +128,11 @@ export const App = () => {
     </div>
   </div>
 }
+
+// does some stuff
+console.log("hello")
+
+  const handleScoreReset = () => {
+    setXScore(0);
+    setOScore(0);
+  }
