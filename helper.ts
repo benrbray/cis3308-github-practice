@@ -1,5 +1,6 @@
 export const myFunction = () => {
-  console.log("hello!")
+    let not_this = 5;
+    return 61;
 }
 
 //comment for change
